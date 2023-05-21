@@ -6,6 +6,9 @@ export default {
     './src/components/**/*.jsx',
   ],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {},
   },
   plugins: [require("daisyui")],

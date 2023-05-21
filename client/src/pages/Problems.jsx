@@ -37,19 +37,17 @@ const problems2 = [{
     title: "Bitwise AND of Numbers Range",
     difficulty: "Medium",
     acceptance: "63%"
-},
-    {
+}, {
         id:7,
         title: "Happy Number",
         difficulty: "Easy",
         acceptance: "54.9%"
-    },
-    {
+}, {
         id:8,
         title: "Remove Linked List Elements",
         difficulty: "Hard",
         acceptance: "42%"
-    }];
+}];
 const problems3 = [{
     id: 9,
     title: "Auto Complete Suggestions",
@@ -99,7 +97,7 @@ export default function Problems(props) {
                 <tr key={problem.id}
                     className={problem.id % 2 === 0 ? "bg-slate-200 text-slate-800" : "bg-zinc-800 text-slate-300"}>
                     <td>{problem.id}</td>
-                    <td><Link to={`${problem.id}`}>{problem.title}</Link></td>
+                    <td><Link to={`/problem/${problem.id}`}>{problem.title}</Link></td>
                     <td className={`problem-${problem.difficulty}`}>{problem.difficulty}</td>
                     <td>{problem.acceptance}</td>
                 </tr>

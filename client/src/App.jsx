@@ -2,37 +2,27 @@ import HomePage from "./pages/HomePage.jsx";
 import Signup from "./pages/signup.jsx";
 import LogIn from "./pages/LogIn.jsx";
 import Problems from "./pages/Problems.jsx";
-import SpecificProblem from "./pages/SpecificProblem.jsx";
-import { createBrowserRouter, RouterProvider} from "react-router-dom";
-import ErrorPage from "./pages/ErrorPage.jsx";
 
-const root = createBrowserRouter([
-    {
-    path: "/",
-    element: <HomePage />,
-    errorElement: <ErrorPage />,
-    children: [
-        {
-            path:"/login",
-            element: <LogIn />,
-            errorElement: <ErrorPage />,
-        },
-        {
-            path: "/signup",
-            element: <Signup />,
-            errorElement: <ErrorPage />,
-        }, {
-            path: "/problems",
-            element: <Problems />,
-            errorElement: <ErrorPage />,
-        }
-    ]
-    }
-    ])
+import NavBar from "./components/NavBar.jsx";
+
+import SpecificProblem from "./pages/SpecificProblem.jsx";
+
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+
+import ErrorPage from "./pages/ErrorPage.jsx";
 
 function App() {
     return (
-        < RouterProvider router={root}/>
+        <BrowserRouter>
+            <Routes>
+                <Route path={"/"} element={<HomePage />}/>
+                <Route path={"/signup"} element={<Signup />}/>
+                <Route path={"/login"} element={<LogIn />}/>
+                <Route path={"/problems/all"} element={<Problems />}/>
+                <Route path={"/problem/:pid"} element={<SpecificProblem />}/>
+                <Route path={"*"} element={<ErrorPage />}/>
+            </Routes>
+        </BrowserRouter>
     );
 }
 

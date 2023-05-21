@@ -16,7 +16,7 @@ function NavBar() {
                         <Link to={"/login"}>Log In</Link>
                     </li>
                     <li>
-                        <Link to={"/problems"}>Problems</Link>
+                        <Link to={"/problems/all"}>Problems</Link>
                     </li>
                 </ul>
             </div>
